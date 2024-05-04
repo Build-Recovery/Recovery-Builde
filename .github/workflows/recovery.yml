@@ -5,9 +5,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp -b twrp-12.1
-  DEVICE: LF7
+  DEVICE: TECNO-LF7
   DT_LINK: https://github.com/T0UB3S/android_device_tecno_TECNO-LF7
-  DT_PATH: device/tecno/LF7
+  DT_PATH: device/tecno/TECNO-LF7
   TARGET: bootimage
   TZ: America/caracas
 
