@@ -27,12 +27,18 @@ jobs:
 
       - name: Sync recovery source and device tree
         run: |
-          mkdir work
-          cd work
-          repo init -u $MANIFEST --depth=1
-          repo sync -c -j4 --force-sync --no-clone-bundle --no-tags
-          repo sync -c -j4 --force-sync --no-clone-bundle --no-tags
-          git clone --depth=1 $DT_LINK $DT_PATH
+         mkdir work
+         cd work
+
+         # Install repo tool
+         sudo apt-get update && sudo apt-get install -y repo
+
+         # Continue with repo commands
+         repo init -u $MANIFEST --depth=1
+         repo sync -c -j4 --force-sync --no-clone-bundle --no-tags
+         repo sync -c -j4 --force-sync --no-clone-bundle --no-tags
+         git clone --depth=1 $DT_LINK $DT_PATH
+
 
       - name: Build
         run: |
